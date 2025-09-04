@@ -3,16 +3,17 @@ import threading
 import time
 
 
-SERIAL_PORT = '/dev/ttyUSB0'  # Replace with your serial port
-BAUD_RATE = 9600
+SERIAL_PORT = '/dev/ttyUSB1'  # Replace with your serial port
+BAUD_RATE = 115200
 TIMEOUT = 1
 
 # Initialize the serial connection
-try:
-	ser = serial.Serial(SERIAL_PORT, BAUD_RATE, timeout=TIMEOUT)
-except:
-	print(f"Could not connect to {SERIAL_PORT}")
-	exit()
+#try:
+#	ser = serial.Serial(SERIAL_PORT, BAUD_RATE, timeout=TIMEOUT)
+#except:
+#	print(f"Could not connect to {SERIAL_PORT}")
+#	exit()
+ser = serial.Serial(SERIAL_PORT, BAUD_RATE, timeout=TIMEOUT)
 
 def listen_to_serial():
     """Thread function to continuously listen to serial data."""
